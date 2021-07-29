@@ -39,3 +39,21 @@ pub struct Stats {
     median: i32,
     mode: i32,
 }
+
+pub fn latinPig(s: &str) -> String {
+    let mut res: Vec<String> = Vec::new();
+    for word in s.split_whitespace() {
+        if word.starts_with(is_vowel) {
+            res.push(format!("{}-hay", word));
+        } else {
+            let (first, rest) = word.split_at(1);
+            res.push(format!("{}-{}ay", rest, first))
+        }
+    }
+    res.join(" ")
+}
+
+fn is_vowel(c: char) -> bool {
+    let vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U', 'y', 'Y'];
+    vowels.contains(&c)
+}

@@ -8,5 +8,11 @@ fn main() {
     // string::string();
     // hash_map::hash_map();
     let stats = exercises::stats(vec![14, 14, 10, 19, 7, 9, 10, 10, 8, 7, 12, 15, 14, 14]);
-    println!("{:#?}", stats)
+    println!("{:#?}", stats);
+    let res = exercises::latinPig("apple");
+    println!("{}", res);
+    let res = exercises::latinPig("first");
+    println!("{}", res);
+    let res = exercises::latinPig("second");
+    println!("{}", res);
 }
